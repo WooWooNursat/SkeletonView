@@ -17,11 +17,6 @@ extension UIView {
 extension UITableView {
     
     override var subviewsToSkeleton: [UIView] {
-		// on `UIViewController'S onViewDidLoad`, the window is still nil.
-		// Some developer trying to call `view.showAnimatedSkeleton()`
-		// when the request or data is loading which sometimes happens before the ViewDidAppear
-		guard window != nil else { return [] }
-        
         var result = [UIView]()
 
         for subview in subviews {
